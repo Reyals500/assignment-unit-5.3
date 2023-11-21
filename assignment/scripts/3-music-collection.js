@@ -2,15 +2,23 @@ console.log('***** Music Collection *****')
 // Safe Zone -- Write code below this line
 
 let myCollection = [];
-function addToCollection(collection, title, artist, yearPublished) {
-  
-  const collection = {
-    title:[],
-    artist:[],
-    yearPublished:[],
-  }//end of object
-}
 
+function addToCollection(collection, title, artist, yearPublished) {
+    let musica = {
+    title,
+    artist,
+    yearPublished,
+  }//end of object
+  collection.push(musica)
+  return musica;
+}
+addToCollection(myCollection, 'Take me back to eden', 'Sleep Token', '2023');
+addToCollection(myCollection, 'Nightmare', 'Avenged Sevenfold', '2010');
+addToCollection(myCollection, 'Emblas Saga', 'Brothers of Metal', '2020');
+addToCollection(myCollection, 'Midnight', 'Set It Off', '2019');
+addToCollection(myCollection, 'The Nexus', 'Amaranthe', '2013');
+addToCollection(myCollection, 'Utas Songs on film One Piece Red', 'Ado', '2022');
+console.log(myCollection);//logging to make sure it works
 
 
 
