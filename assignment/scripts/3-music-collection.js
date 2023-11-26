@@ -55,7 +55,7 @@ showCollection(myCollection);
 //   }
 // }
 
-// function findByArtist(collection, artist) {//this was a function i used with ai and then used it to help me adjust previous function
+// function findByArtist(collection, artist) {//this was a function i found and then used it to help me adjust previous function
 //   let artistArray = [];
 //   collection.forEach(item => {
 //       if (item.artist === artist) {
@@ -83,7 +83,42 @@ console.log(findByArtist(myCollection, 'Taylor Swift'));
 console.log(findByArtist(myCollection, 'Black Sabbath'));
 
 
+console.log('===This is the search function===');
 
+function search(collection, searchCriteria) {
+  let searchResults = [];
+  for ( let objects of collection) {
+    if (searchCriteria != objects || searchCriteria.artist != objects.artist || searchCriteria.yearPublished != objects.yearPublished ) {
+      console.log('This is not in this collection', collection);
+      return collection;
+    } else if (searchCriteria === objects && searchCriteria.artist === objects.artist && searchCriteria.yearPublished === objects.yearPublished){
+      searchResults.push(objects);
+      console.log(searchResults);
+    }
+  }
+  console.log('Search for the Artist:', searchCriteria.artist, 'and the Year:', searchCriteria.yearPublished);
+  return searchResults;
+}
+search(myCollection, {artist: 'Brothers of Metal'});
+search(myCollection, {artist: 'Set It Off', yearPublished: '2019'});
+search(myCollection, {artist: 'Avenged Sevefold', year: '2000'})
+search(myCollection);
+search(myCollection, { artist: '', yearPublished: '2018'});
+
+// function search(collection, searchCriteria) {
+//   if (!searchCriteria || !searchCriteria.artist || !searchCriteria.year) {
+//     return collection;
+//   }
+ 
+//   return collection.filter(album => {
+//     return album.artist === searchCriteria.artist && album.year === searchCriteria.year;
+//   });
+//  }
+// search(myCollection, {artist: 'Brothers of Metal'});
+// search(myCollection, {artist: 'Set It Off', yearPublished: '2019'});
+// search(myCollection, {artist: 'Avenged Sevefold', year: '2000'})
+// search(myCollection);
+// search();
 
 
 // PLEASE DO NOT MODIFY THIS. Just leave it down here at the bottom. Think of it
